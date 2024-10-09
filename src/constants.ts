@@ -1,5 +1,5 @@
-export const entityRows = 1
-export const entitiesInARow = 5
+export const entityRows = 21
+export const entitiesInARow = 11
 
 // ls | tr '[:upper:]' '[:lower:]' | > list-of-folders.txt
 export const fixInters = [

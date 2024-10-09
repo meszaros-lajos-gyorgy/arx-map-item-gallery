@@ -8,7 +8,7 @@ import { entitiesInARow, entityRows, fixInters } from '@/constants.js'
 const settings = new Settings()
 const map = new ArxMap()
 
-map.config.offset = new Vector3(6000, 0, 6000)
+map.config.offset = new Vector3(6000, 0, 4000)
 map.hud.hide(HudElements.Minimap)
 
 // ------------------
@@ -41,6 +41,13 @@ for (let j = 0; j < entityRows; j++) {
       position: new Vector3((i - Math.floor(entitiesInARow / 2)) * 500, -10, 250 + j * 500),
       orientation: new Rotation(0, MathUtils.degToRad(-90), 0),
     })
+
+    if (name === 'pressurepad_gob') {
+      entity.withScript()
+      entity.script?.on('init', () => {
+        return `refuse`
+      })
+    }
 
     return entity
   })
