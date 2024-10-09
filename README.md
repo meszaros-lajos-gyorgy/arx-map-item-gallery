@@ -1,2 +1,3 @@
-# arx-map-item-gallery
-A map showcasing every item from Arx Fatalis
+# Item gallery map for Arx Fatalis
+
+A map showcasing every item of Arx Fatalis
