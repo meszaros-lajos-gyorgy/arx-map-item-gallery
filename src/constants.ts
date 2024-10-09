@@ -1,3 +1,6 @@
+export const entityRows = 4
+export const entitiesInARow = 9
+
 export const fixInters = [
   'akbaa_puzzle',
   'akbaa_puzzle_done',

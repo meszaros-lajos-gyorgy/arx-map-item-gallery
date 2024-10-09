@@ -1,24 +1,22 @@
-import { ArxMap, Entity, Light, Rotation, Settings, Texture, Vector3 } from 'arx-level-generator'
+import { ArxMap, Entity, HudElements, Light, Rotation, Settings, Texture, Vector3 } from 'arx-level-generator'
 import { createPlaneMesh } from 'arx-level-generator/prefabs/mesh'
 import { createLight } from 'arx-level-generator/tools'
 import { applyTransformations } from 'arx-level-generator/utils'
 import { MathUtils, Vector2 } from 'three'
-import { fixInters } from '@/constants.js'
+import { entitiesInARow, entityRows, fixInters } from '@/constants.js'
 
 const settings = new Settings()
 const map = new ArxMap()
 
 map.config.offset = new Vector3(6000, 0, 6000)
+map.hud.hide(HudElements.Minimap)
 
-const entityRows = 4
-const entitiesInARow = 9
-
-const floorSize = new Vector2(entitiesInARow * 500, 600 * entityRows)
-const mesh = createPlaneMesh({ size: floorSize, texture: Texture.missingTexture })
+const floorSize = new Vector2(entitiesInARow * 500, 500 * entityRows + 200)
+const mesh = createPlaneMesh({ size: floorSize, texture: Texture.l1PrisonSandGround01 })
 applyTransformations(mesh)
 mesh.translateX(map.config.offset.x)
 mesh.translateY(map.config.offset.y)
-mesh.translateZ(map.config.offset.z + floorSize.y / 2 - 50)
+mesh.translateZ(map.config.offset.z + floorSize.y / 2 - 100)
 applyTransformations(mesh)
 map.polygons.addThreeJsMesh(mesh)
 
