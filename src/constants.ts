@@ -1,7 +1,7 @@
 export const entityRows = 21
 export const entitiesInARow = 11
 
-// ls | tr '[:upper:]' '[:lower:]' | > list-of-folders.txt
+// ls | tr '[:upper:]' '[:lower:]' > list-of-folders.txt
 export const fixInters = [
   'akbaa_puzzle',
   'akbaa_puzzle_done',
